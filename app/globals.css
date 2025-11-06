@@ -1,26 +1,64 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* 1. Import Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* 2. Base styles for the dark theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Define default background and foreground colors */
+  --background: 0 0% 3.9%; /* A very dark grey/near black */
+  --foreground: 0 0% 98%;
+  --card: 240 5.9% 10%; /* Slightly lighter dark for components */
+  --accent: 250 80% 60%; /* Vibrant purple/blue accent */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 3. Apply smooth transitions globally */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
+  /* Use the custom CSS variables for easy theme changes */
+  @apply bg-[var(--background)] text-[var(--foreground)] min-h-screen antialiased;
+  scroll-behavior: smooth;
+}
+
+/* 4. Custom Utility for the Main Content Container */
+.content-container {
+    /* Full width background, but content is capped and centered */
+    @apply w-full flex justify-center;
+}
+
+/* 5. Custom Utility for responsive padding */
+.section-padding {
+    /* Padding for mobile and increasing padding for desktop */
+    @apply px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-20 py-16 md:py-24;
+}
+
+/* 6. Subtle Scrollbar Styling (Optional, for better aesthetics) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent) / 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.8);
+}
+.portfolio-bg {
+    background-image: url('https://media.istockphoto.com/id/1226864194/photo/programming-code-abstract-technology-background-of-software-developer-and-computer-script-3d.webp?b=1&s=170667a&w=0&k=20&c=jE0CZ16mm33VrTGkiyX5m8hahtXQmR7rYjdlsA0-l6c=');
+    background-size: cover;          /* Ensures the image covers the entire viewport */
+    background-attachment: fixed;    /* Makes the image fixed while content scrolls */
+    background-position: center;     /* Centers the image */
 }
