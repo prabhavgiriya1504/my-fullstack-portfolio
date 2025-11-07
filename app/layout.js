@@ -46,8 +46,14 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Your Name | Full Stack Portfolio',
+  title: 'Prabhav Giriya | Full Stack Portfolio',
   description: 'A dynamic portfolio showcasing full stack projects, skills, and certifications.',
+  icons: {
+    icon: '/prabhavImage.ico',
+  },
+  openGraph: {
+    images: ['/prabhavImage.ico'],
+  },
 };
 
 export default function RootLayout({ children }) {

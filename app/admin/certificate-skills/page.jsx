@@ -6,7 +6,9 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 // --- Environment Setup & Utilities ---
 
 // Use a fallback for the environment variable in this self-contained environment
-const BACKEND_URL = 'http://localhost:5000'; // Replace with your actual backend URL
+const BACKEND_URL = typeof process !== 'undefined' 
+    ? (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000') 
+    : 'http://localhost:5000';// Replace with your actual backend URL
 
 /**
  * Custom fetch utility with error handling and optional payload for POST/PUT.
