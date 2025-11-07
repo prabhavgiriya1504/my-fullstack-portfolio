@@ -1,4 +1,3 @@
-// app/contact/page.jsx
 import AnimationWrapper from '@/components/AnimationWrapper';
 import ContactForm from '@/components/ContactForm'; // Assuming this path is correct
 

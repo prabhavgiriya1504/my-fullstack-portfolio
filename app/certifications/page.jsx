@@ -1,12 +1,9 @@
-// app/certifications/page.jsx
-// This file fetches and displays a list of all certifications.
-
 import AnimationWrapper from '@/components/AnimationWrapper';
 
 // Retrieve backend URL from environment variables
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-// Function to fetch dynamic certification data
+// Function to fetch dynamic cetrification data
 async function getCertifications() {
   try {
     // Assuming your certifications endpoint is /api/v1/certifications
@@ -17,8 +14,7 @@ async function getCertifications() {
     if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
     }
-    // Assuming the backend returns an array of certification objects 
-    // (e.g., [{ title: 'AWS Certified', issuer: 'Amazon', date: '2023-01-01' }])
+    
     return res.json(); 
   } catch (error) {
     console.error("Failed to fetch certifications for /certifications page:", error);
@@ -69,7 +65,6 @@ export default async function CertificationsPage() {
                       <div className="p-6 bg-slate-800 rounded-xl shadow-lg border border-teal-600 transition-transform hover:scale-[1.02] cursor-pointer">
                         <h3 className="text-3xl font-bold text-teal-400 mb-1">{cert.title || 'Certification Title'}</h3>
                         <p className="text-xl text-gray-400">Issuer:-   {cert.issuer || 'N/A'}</p>
-                        {/* Assuming you have a date and a link/credential ID */}
                         {cert.date && <p className="text-sm text-gray-500 mt-1">Issued: {new Date(cert.date).toLocaleDateString()}</p>}
                         {cert.credentialUrl && (
                           <a 

@@ -1,6 +1,4 @@
-// app/login/page.jsx
-
-import LoginForm from '@/components/AdminLoginForm'; // Adjust path if necessary
+import LoginForm from '@/components/AdminLoginForm'; 
 
 export default function LoginPage() {
   return (

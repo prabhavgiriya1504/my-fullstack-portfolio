@@ -1,6 +1,3 @@
-// app/projects/page.jsx
-// This file displays all projects fetched from the backend.
-
 import AnimationWrapper from '@/components/AnimationWrapper';
 import ProjectCard from '@/components/ProjectCard';
 

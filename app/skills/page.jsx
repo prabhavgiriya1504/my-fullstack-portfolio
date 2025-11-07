@@ -1,6 +1,3 @@
-// app/skills/page.jsx
-// This file displays all skills fetched from the backend.
-
 import AnimationWrapper from '@/components/AnimationWrapper';
 
 // Retrieve backend URL from environment variables

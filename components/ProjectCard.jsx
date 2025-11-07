@@ -1,4 +1,3 @@
-// client/components/ProjectCard.jsx
 import Link from 'next/link';
 
 export default function ProjectCard({ project }) {

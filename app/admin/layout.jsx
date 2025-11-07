@@ -96,22 +96,15 @@
 
 
 
-// app/admin/layout.jsx
 
-// ⚠️ Convert back to a Server Component!
-// Remove 'use client' and all client-side logic.
-// The pages within the route group will handle redirection.
 
 import AdminSidebar from '@/components/AdminSidebar';
 
 export default function AdminLayout({ children }) {
-    // ⚠️ CRITICAL CHANGE: Remove all client-side hooks (useState, useEffect)
-    // and rely on the Server Component pages (like contacts/page.jsx) 
-    // to perform the redirect.
+    
 
     return (
         <div className="flex min-h-screen bg-gray-100">
-            {/* The sidebar is likely still a Client Component, so it's fine */}
             <AdminSidebar /> 
             <div className="flex-1 p-8 pt-12">
                 <div className="bg-white p-6 rounded-xl shadow-lg">

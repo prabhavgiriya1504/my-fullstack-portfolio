@@ -1,4 +1,3 @@
-// client/components/AnimationWrapper.jsx
 'use client';
 
 import { motion } from 'framer-motion';

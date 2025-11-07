@@ -1,5 +1,3 @@
-// client/components/ResumeDownload.jsx
-// Make sure you place your resume PDF file at: client/public/your_resume.pdf
 import Link from 'next/link';
 
 export default function ResumeDownload() {
