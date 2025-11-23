@@ -27,11 +27,11 @@ export default async function CertificationsPage() {
 
   return (
     // Reusing the main container and background styles
-    <main className="min-h-screen bg-yellow-200 font-sans text-gray-200">
+    <main className="min-h-screen font-sans text-gray-200">
       <div className="container mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* 🏅 Certifications Header Section */}
-        <section className="text-center py-20 lg:py-28 bg-teal-800 rounded-b-3xl mb-10">
+        <section className="text-center py-20 lg:py-28  rounded-b-3xl mb-10">
           <AnimationWrapper>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight">
               Certifications & Training
@@ -43,7 +43,7 @@ export default async function CertificationsPage() {
         </section>
 
         {/* 📜 Certifications List Section */}
-        <section id="certs-list" className="py-10 bg-red-100 rounded-3xl p-6 lg:p-10 mb-10">
+        <section id="certs-list" className="py-10  rounded-3xl p-6 lg:p-10 mb-10">
           <AnimationWrapper delay={0.2}>
             
             {/* Using a simple two-column layout for presentation */}
@@ -51,6 +51,7 @@ export default async function CertificationsPage() {
 
               {/* Left Column: Context/Description */}
               <div className="lg:w-1/4 mb-10 lg:mb-0 lg:sticky lg:top-10 lg:self-start text-center lg:text-left">
+              
                 <h2 className="text-4xl font-extrabold text-teal-400 mb-4">Verification</h2>
                 <p className="text-4xl text-gray-400 border-l-4 border-teal-600 pl-6 inline-block lg:block">
                   Validated skills from industry leaders, ensuring I meet modern technology standards.

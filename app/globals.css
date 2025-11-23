@@ -27,8 +27,35 @@ body {
   /* Use the custom CSS variables for easy theme changes */
   @apply bg-[var(--background)] text-[var(--foreground)] min-h-screen antialiased;
   scroll-behavior: smooth;
+  
 }
 
+/* Hero Section Styling: Image Background Implementation */
+.bg-image {
+    /* ... other styles ... */
+    overflow: hidden; 
+}
+
+/* Pseudo-element for the Background Image and Dark Overlay */
+.bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* *** THIS IS THE LINE WHERE YOUR IMAGE URL IS USED ***
+    */
+    background-image: url('https://img.freepik.com/premium-photo/rubik-s-cube-black-background-wallpaper_1013366-6688.jpg?w=740');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Dark overlay for contrast (similar to 'bg-red-400' but dark and image-based) */
+    background-color: rgba(13, 17, 23, 0.75); /* Dark shade opacity */
+    background-blend-mode: darken;
+    filter: brightness(0.9) grayscale(0.2); /* Subtle filter for effect */
+    z-index: -1;
+}
 /* 4. Custom Utility for the Main Content Container */
 .content-container {
     /* Full width background, but content is capped and centered */
@@ -61,4 +88,48 @@ body {
     background-size: cover;          /* Ensures the image covers the entire viewport */
     background-attachment: fixed;    /* Makes the image fixed while content scrolls */
     background-position: center;     /* Centers the image */
+}
+
+
+/* === Animated Border on Scroll === */
+
+.anim-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.anim-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* border thickness */
+  background: linear-gradient(
+    120deg,
+    #2d29291d,
+    #1b1d205c,
+    #0f766e
+  );
+  background-size: 300% 300%;
+  filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+  z-index: -1;
+}
+
+.anim-border.active::before {
+  opacity: 1;
+  animation: borderGlow 4s ease infinite;
+}
+
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

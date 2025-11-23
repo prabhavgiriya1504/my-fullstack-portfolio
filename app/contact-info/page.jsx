@@ -3,11 +3,11 @@ import ContactForm from '@/components/ContactForm'; // Assuming this path is cor
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-yellow-200 font-sans text-gray-200">
+    <main className="min-h-screen  font-sans text-gray-200">
       <div className="container mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* 📧 Contact Header Section */}
-        <section className="text-center py-20 lg:py-28 bg-orange-300 rounded-b-3xl mb-10">
+        <section className="text-center py-20 lg:py-28  rounded-b-3xl mb-10">
           <AnimationWrapper>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight">
               Let's Connect
@@ -19,7 +19,7 @@ export default function ContactPage() {
         </section>
 
         {/* 📝 Contact Form Section */}
-        <section id="contact-form-section" className="py-10 bg-red-100 rounded-3xl p-6 lg:p-10 mb-10">
+        <section id="contact-form-section" className="py-10  rounded-3xl p-6 lg:p-10 mb-10">
           <AnimationWrapper delay={0.2}>
             {/* The main content structure matching your home page layout */}
             <div className="lg:flex lg:gap-16">

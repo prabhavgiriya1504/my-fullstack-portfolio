@@ -36,18 +36,18 @@ export default async function AdminDashboardPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="p-6 bg-indigo-50 rounded-xl shadow-md">
                     <h2 className="text-xl font-semibold text-indigo-700 mb-2">Projects</h2>
-                    <p className="text-gray-600">Total Projects: **0**</p>
+                    <p className="text-gray-600">Total Projects: 0</p>
                     <p className="text-sm text-gray-500 mt-2">Go to "Projects" to add, edit, or delete portfolio entries.</p>
                 </div>
                 <div className="p-6 bg-red-50 rounded-xl shadow-md">
                     <h2 className="text-xl font-semibold text-red-700 mb-2">Pending Contacts</h2>
-                    <p className="text-gray-600">New Messages: **0**</p>
+                    <p className="text-gray-600">New Messages: 0</p>
                     <p className="text-sm text-gray-500 mt-2">Check the "Contacts" section for new user submissions.</p>
                 </div>
                 <div className="p-6 bg-green-50 rounded-xl shadow-md">
                     <h2 className="text-xl font-semibold text-green-700 mb-2">System Status</h2>
-                    <p className="text-gray-600">Backend: **Running**</p>
-                    <p className="text-gray-600">Database: **Connected**</p>
+                    <p className="text-gray-600">Backend: Running</p>
+                    <p className="text-gray-600">Database: Connected</p>
                     <p className="text-sm text-gray-500 mt-2">Awaiting real-time status implementation.</p>
                 </div>
             </div>

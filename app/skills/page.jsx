@@ -28,11 +28,11 @@ export default async function SkillsPage() {
 
   return (
     // Reusing the main container and background styles from your home page
-    <main className="min-h-screen bg-yellow-200 font-sans border rounded-full text-gray-200">
+    <main className="min-h-screen  font-sans border rounded-full text-gray-200">
       <div className="container mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* 🛠️ Skills Header Section (Using the Amber color theme from your home page skills section) */}
-        <section className="text-center py-20 lg:py-28 bg-amber-800 rounded-3xl mb-10">
+        <section className="text-center py-20 lg:py-28  rounded-3xl mb-10">
           <AnimationWrapper>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight">
               My Full Expertise
@@ -44,7 +44,7 @@ export default async function SkillsPage() {
         </section>
 
         {/* 🧠 Skills List Section */}
-        <section id="all-skills-list" className="py-10 bg-red-100 rounded-3xl p-6 lg:p-10">
+        <section id="all-skills-list" className="py-10 rounded-3xl p-6 lg:p-10">
           <AnimationWrapper delay={0.2}>
             <div className="lg:flex lg:gap-16">
 

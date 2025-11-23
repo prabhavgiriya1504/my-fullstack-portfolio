@@ -2,6 +2,7 @@ import AnimationWrapper from '@/components/AnimationWrapper';
 import ProjectCard from '@/components/ProjectCard';
 import ContactForm from '@/components/ContactForm';
 import ResumeDownload from '@/components/ResumeDownload';
+import BorderAnimationClient from '@/components/BorderAnimationClient';
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
@@ -23,6 +24,7 @@ async function getProjects() {
   }
 }
 
+
 // Function to fetch dynamic skill data
 async function getSkills() {
   try {
@@ -42,21 +44,36 @@ async function getSkills() {
   }
 }
 
+
+
 export default async function HomePage() {
   // Fetch projects and skills concurrently for better performance
   const [projects, skills] = await Promise.all([
     getProjects(),
-    getSkills()
+    getSkills(),
   ]);
-
+   
   return (
     // 1. Full width, attractive dark background, big font
-    <main className="min-h-screen bg-yellow-200 font-sans text-gray-200 rounded-full">
+    <main className="min-h-screen flex w-full font-sans text-gray-200 rounded-full">
+      <BorderAnimationClient />
+      {/* ⬅️ Left Fixed Sidebar - Animated */}
+      <div className='hidden xl:block fixed left-0 top-0 h-full w-1/12 bg-gray-900 border-r border-teal-700/30' style={{ zIndex: 0 }}>
+        {/* We can place the AnimationWrapper here if needed, but a simple class-based effect is often sufficient for background elements */}
+        <AnimationWrapper delay={0.1}>
+            <div className="h-full w-full bg-slate-800/10 transition-opacity duration-1000">
+                {/* Optional: Add a subtle scrolling effect or element here */}
+                <div className='absolute inset-0 flex items-center justify-center text-white-700/10 text-[10rem] font-black pointer-events-none transform rotate-90 opacity-5'>
+                    PRABHAV
+                </div>
+            </div>
+        </AnimationWrapper>
+      </div>
       {/* Removed max-w-7xl for full width use, increased padding */}
       <div className="container mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* 🚀 Hero Section - Increased font size and new colors */}
-        <section className="text-center py-20 lg:py-32 bg-red-400 rounded-3xl">
+        <section className="text-center py-20 lg:py-32 rounded-3xl">
           <AnimationWrapper>
             <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white mb-6 leading-tight">
               Hello, I am <span className="text-teal-400">Prabhav Giriya</span>
@@ -74,7 +91,7 @@ export default async function HomePage() {
         </section>
 
         {/* 💡 Projects Section - Updated with Left Column Descriptor, bigger text, and new colors */}
-        <section id="projects" className="py-20 border-t bg-red-100 border-slate-700 rounded-3xl">
+        <section id="projects" className="py-20 border-t border-slate-700 rounded-3xl">
           <AnimationWrapper delay={0.2}>
             {/* New responsive two-column layout for desktop */}
             <div className="lg:flex lg:gap-16">
@@ -107,7 +124,7 @@ export default async function HomePage() {
         </section>
 
         {/* 🛠️ Skills Section - Updated with Left Column Descriptor, bigger text, and new colors */}
-        <section id="skills" className="py-20 border-t bg-amber-800 border-slate-700 rounded-3xl">
+        <section id="skills" className="py-20 border-t  border-slate-700 rounded-3xl">
           <AnimationWrapper delay={0.4}>
             {/* New responsive two-column layout for desktop */}
             <div className="lg:flex lg:gap-16">
@@ -139,7 +156,7 @@ export default async function HomePage() {
         </section>
 
         {/* 📧 Contact Section - Updated with Left Column Descriptor, bigger text, and new colors */}
-        <section id="contact" className="py-20 border-t bg-orange-300 border-slate-700 mb-10 rounded-3xl">
+        <section id="contact" className="py-20 border-t border-slate-700 mb-10 rounded-3xl">
           <AnimationWrapper delay={0.6}>
             {/* New responsive two-column layout for desktop */}
             <div className="lg:flex lg:gap-16">
@@ -160,6 +177,17 @@ export default async function HomePage() {
             </div>
           </AnimationWrapper>
         </section>
+      </div>
+      {/* ➡️ Right Fixed Sidebar - Animated */}
+      <div className='hidden xl:block fixed right-0 top-0 h-full w-1/12 bg-gray-900 border-l border-teal-700/30' style={{ zIndex: 0 }}>
+        <AnimationWrapper delay={0.1}>
+            <div className="h-full w-full bg-slate-800/10 transition-opacity duration-1000">
+                {/* Optional: Add a subtle scrolling effect or element here */}
+                <div className='absolute inset-0 flex items-center justify-center text-white-700/10 text-[10rem] font-black pointer-events-none transform -rotate-90 opacity-5'>
+                    PORTFOLIO
+                </div>
+            </div>
+        </AnimationWrapper>
       </div>
     </main>
   );
